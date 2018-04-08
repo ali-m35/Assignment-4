@@ -19,11 +19,10 @@ package BankAccount;
  {  // begin class
  	
  	// *********** class constants **********
- 	
+ 	  public static int nextID = 1000;
  	
  	// ********** instance variable **********
             private String name = "";
-            private int id = 0;
             private int age = 0;
             private String dateOfBirth = "";
             private String email = "";
@@ -45,9 +44,8 @@ package BankAccount;
        balance = b
     Returns: none
  *****************************************************/
-            public BankAccount(String n, int ID, int a, String dof, String e, String p, double b){
+            public BankAccount(String n, int a, String dof, String e, String p, double b){
                 name = n;
-                id = ID;
                 age = a;
                 dateOfBirth = dof;
                 email = e;
@@ -73,15 +71,6 @@ package BankAccount;
          public String getName(){
              return this.name;
          }// end getName
-         
- /*****************************************************
-    Purpose: get persons id
-    Interface: IN: none
-    Returns: person's name
- *****************************************************/
-         public int getID(){
-             return this.getID();
-         }// end getID
          
 /*****************************************************
     Purpose: get person's age
