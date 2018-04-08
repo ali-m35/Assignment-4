@@ -1,8 +1,10 @@
+package BankAccount;
+
 /* **********************************************************
- * Programmer: Hanzala Ali
- * Class: CS30S
+ * Programmer:	Rob Sveinson
+ * Class:		CS20S
  * 
- * Assignment: Assignement 4
+ * Assignment:	aX  qY
  *
  * Description:	describe the class you are creating
  *
@@ -13,7 +15,7 @@
  // import files here as needed
  
  
- public class BankAccount
+ public class CheckingAccount extends BankAccount
  {  // begin class
  	
  	// *********** class constants **********

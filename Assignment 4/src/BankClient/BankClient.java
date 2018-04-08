@@ -1,3 +1,5 @@
+package BankClient;
+
 // **********************************************************************
 // Programmer:	Rob Sveinson
 // Class:		CS20S

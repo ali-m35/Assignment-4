@@ -1,4 +1,4 @@
-package assignment4;
+package BankClient;
 
 /* **********************************************************
  * Programmer:	Hanzala Ali
