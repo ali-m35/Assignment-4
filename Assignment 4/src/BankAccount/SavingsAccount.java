@@ -20,13 +20,13 @@ package BankAccount;
  	
  	// *********** class constants **********
                 
-                public static int nextID = 1000;
+                private static int nextID = 1000;
      
  	// ********** instance variable **********
  	
-          private int employeeID = 1000;      
-          private int trasanctionLimit = 0; // how many transactions can be made per month
- 	  private int depositRequirements = 0; // monthly deposit requirements 
+          private int savingID = 0000;      
+          private int transanctionLimit = 0; // how many transactions can be made per month
+ 	  private double depositRequirements = 0.00; // monthly deposit requirements
      
  	// ********** constructors ***********
     /*****************************************************
@@ -44,12 +44,12 @@ package BankAccount;
         depositRequirements = dR
         Returns: none
     *****************************************************/
-            public SavingsAccount(String n, int a, String dof, String e, String p, double b, int tL, int dR){
+            public SavingsAccount(String aT, String n, int a, String dof, String e, String p, double b, int tL, double dR){
                
-                super(n,a,dof,e,p,b);
+                super(aT,n,a,dof,e,p,b);
                 
-                employeeID = nextID++;
-                trasanctionLimit = tL;
+                savingID = nextID++;
+                transanctionLimit = tL;
                 depositRequirements = dR;
                 
             }// end savingsaccount
@@ -59,7 +59,7 @@ package BankAccount;
         Returns: none
     *****************************************************/
             public SavingsAccount(){
-                
+                // defaultsavings account
             }// end SavingAccount
 
  	// ********** accessors **********
@@ -69,7 +69,7 @@ package BankAccount;
         Returns: person's name
     *****************************************************/
             public int getPersonID(){
-                return this.employeeID;
+                return this.savingID;
             }//end getPersonID
            
     /*****************************************************
@@ -78,7 +78,7 @@ package BankAccount;
         Returns: person's name
     *****************************************************/
             public int getTransactionLimit(){
-                return this.trasanctionLimit;
+                return this.transanctionLimit;
             }// end getTransactionLimit
     
     /*****************************************************
@@ -86,7 +86,7 @@ package BankAccount;
         Interface: IN: none
         Returns: person's name
     *****************************************************/
-            public int getDepositRequirements(){
+            public double getDepositRequirements(){
                 return this.depositRequirements;
             }// end getDepositRequirements
             

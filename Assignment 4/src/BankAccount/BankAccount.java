@@ -18,10 +18,12 @@ package BankAccount;
  public class BankAccount
  {  // begin class
  	
+     
  	// *********** class constants **********
  	  public static int nextID = 1000;
  	
  	// ********** instance variable **********
+            private String accountType = "";
             private String name = "";
             private int age = 0;
             private String dateOfBirth = "";
@@ -44,7 +46,8 @@ package BankAccount;
        balance = b
     Returns: none
  *****************************************************/
-            public BankAccount(String n, int a, String dof, String e, String p, double b){
+            public BankAccount(String aT, String n, int a, String dof, String e, String p, double b){
+                accountType = aT;
                 name = n;
                 age = a;
                 dateOfBirth = dof;
