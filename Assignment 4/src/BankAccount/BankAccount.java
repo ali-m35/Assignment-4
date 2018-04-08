@@ -19,8 +19,7 @@ package BankAccount;
  {  // begin class
  	
      
- 	// *********** class constants **********
- 	  public static int nextID = 1000;
+ 	// *********** class constants *********
  	
  	// ********** instance variable **********
             private String accountType = "";
@@ -65,6 +64,15 @@ package BankAccount;
 	 } // end default BankAccount	            
             
  	// ********** accessors **********
+         
+ /*****************************************************
+    Purpose: get person's name
+    Interface: IN: none
+    Returns: person's name
+ *****************************************************/
+         public String getAccountType(){
+             return this.accountType;
+         }// end getAccountType
          
  /*****************************************************
     Purpose: get person's name
@@ -119,7 +127,28 @@ package BankAccount;
          public double getBalance(){
              return this.balance;
          }// end getBalance 
+ 
+ /**************************************************
+      * Purpose:    return a string of bank account properties
+      * 
+      * Interface:
+      * in:         none
+      * returns:    info: sting
+ **************************************************/
+         public String toString(){
+             String output = "";
+             
+         output = String.format("Account Type: %16.5s\n",this.getAccountType());
+         output += String.format("Name: %16.5s\n", this.getName());
+         output += String.format("Age: %16.5s\n", this.getAge());
+         output += String.format("Date Of Birth: %16.5s\n", this.getdateOfBirth());
+         output += String.format("Email: %16.5s\n", this.getEmail());
+         output += String.format("Phone Number: %16.5s\n", this.getPhoneNumber());
+         output += String.format("Balance: %16.5f\n", this.getBalance());
+         output += String.format("\n\n");
          
+         return output;
+         }// end toString
  	// ********** mutators **********
  
- }  // end class
+ }  // end clas

@@ -25,6 +25,15 @@ public class BankClient/*CHANGE THIS TO THE NAME OF THE FILE*/
 	
 	// ***** declaration of variables *****
 	
+        String strin;				// string data input from keyboard
+    	String strout;				// processed info string to be output
+    	String bannerOut;			// string to print banner to message dialogs
+    	
+    	String prompt;				// prompt for use in input dialogs
+    	
+    	String delim = "[ :]+";		// delimiter string for splitting input string
+    	String tabSpace = "      ";	// six spaces
+        
 	// ***** create objects *****
 		
 		
