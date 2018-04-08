@@ -15,7 +15,7 @@
 import javax.swing.*;
 import java.text.DecimalFormat;
 
-public class clientTemplate/*CHANGE THIS TO THE NAME OF THE FILE*/
+public class BankClient/*CHANGE THIS TO THE NAME OF THE FILE*/
 {  // begin class
 	public static void main(String args[])
 	{  // begin main

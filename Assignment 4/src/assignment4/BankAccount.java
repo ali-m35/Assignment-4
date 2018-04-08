@@ -1,8 +1,8 @@
 /* **********************************************************
- * Programmer:	Rob Sveinson
- * Class:		CS20S
+ * Programmer: Hanzala Ali
+ * Class: CS30S
  * 
- * Assignment:	aX  qY
+ * Assignment: Assignement 4
  *
  * Description:	describe the class you are creating
  *
@@ -13,7 +13,7 @@
  // import files here as needed
  
  
- public class classTemplate
+ public class BankAccount
  {  // begin class
  	
  	// *********** class constants **********
