@@ -14,8 +14,11 @@ package BankClient;
 //  Output:		describe the result of your program
 // ***********************************************************************
 
+
 import javax.swing.*;
 import java.text.DecimalFormat;
+import java.util.ArrayList;
+import BankAccount.*;
 
 public class BankClient/*CHANGE THIS TO THE NAME OF THE FILE*/
 {  // begin class
@@ -36,25 +39,19 @@ public class BankClient/*CHANGE THIS TO THE NAME OF THE FILE*/
         
 	// ***** create objects *****
 		
-		
+            ProgramInfo programInfo = new ProgramInfo();
+        
 	// ***** create input stream *****
 	
 		//ConsoleReader console = new ConsoleReader(System.in);
 		
 	// ***** Print Banner *****
-	
-		System.out.println("**********************************");
-		System.out.println("NAME:        Your Name Here");
-		System.out.println("Class:       CS30S");
-		System.out.println("Assignment:  Ax Qy");
-		System.out.println("**********************************");
+                strout = programInfo.getBanner("Inheritance");
+                System.out.println(strout);
 		
-	// ***** get input *****
+        // ***** get input *****
 	
-		// all input is gathered in this section
-		// remember to put ConsoleReader.class into the
-		// same folder.
-	
+        
 	// ***** processing *****
 	
 		

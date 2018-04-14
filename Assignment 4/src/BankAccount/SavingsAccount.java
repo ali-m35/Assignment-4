@@ -23,7 +23,6 @@ package BankAccount;
                 private static int nextID = 1000;
      
  	// ********** instance variable **********
- 	
           private int savingID = 0000;      
           private int transanctionLimit = 0; // how many transactions can be made per month
  	  private double depositRequirements = 0.00; // monthly deposit requirements
@@ -44,9 +43,9 @@ package BankAccount;
         depositRequirements = dR
         Returns: none
     *****************************************************/
-            public SavingsAccount(String aT, String n, int a, String dof, String e, String p, double b, int tL, double dR){
+            public SavingsAccount(Title t, String n, int a, String dof, String e, String p, double b, int tL, double dR){
                
-                super(aT,n,a,dof,e,p,b);
+                super(t,n,a,dof,e,p,b);
                 
                 savingID = nextID++;
                 transanctionLimit = tL;
@@ -68,7 +67,7 @@ package BankAccount;
         Interface: IN: none
         Returns: person's name
     *****************************************************/
-            public int getPersonID(){
+            public int getSavingsID(){
                 return this.savingID;
             }//end getPersonID
            
@@ -98,13 +97,14 @@ package BankAccount;
             public String toString(){
                 String output = "";
                 
-         output = String.format("Account Type: %16.5s\n",this.getAccountType());
+         output = String.format("Account Type: %16.5s\n",this.getTitle());
          output += String.format("Name: %16.5s\n", this.getName());
          output += String.format("Age: %16.5s\n", this.getAge());
          output += String.format("Date Of Birth: %16.5s\n", this.getdateOfBirth());
          output += String.format("Email: %16.5s\n", this.getEmail());
          output += String.format("Phone Number: %16.5s\n", this.getPhoneNumber());
          output += String.format("Balance: %16.5f\n", this.getBalance());
+         output += String.format("Savings ID: %16.5S\n", this.getSavingsID());
          output += String.format("Transaction Limit: %16.5s\n", this.getTransactionLimit());
          output += String.format("Deposit Requirements; %16.5f\n", this.getDepositRequirements());
          output += String.format("\n\n");
@@ -113,5 +113,32 @@ package BankAccount;
             }// end toString        
             
  	// ********** mutators **********
- 
+        
+        /*****************************************************
+        Purpose: set checking account id 
+        Interface: IN: none
+        Returns: checking account id
+        *****************************************************/
+            public void setSavingsID(int savingID) {
+                this.savingID = savingID;
+            }// end setSavingsId
+            
+        /*****************************************************
+        Purpose: set transaction limit
+        Interface: IN: none
+        Returns: transaction limit
+        *****************************************************/
+            public void setTransactionLimit(int transactionLimit) {
+                this.transanctionLimit = transactionLimit;
+            }// end setTransactionLimit
+            
+        /*****************************************************
+        Purpose: set deposit requirements
+        Interface: IN: none
+        Returns: deposit requirements
+        *****************************************************/
+            public void setDepositRequirements(double depositRequirements) {
+                this.depositRequirements = depositRequirements;
+            }// end setDepositRequirements
+     
  }  // end class

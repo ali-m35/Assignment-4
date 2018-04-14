@@ -41,9 +41,9 @@ package BankAccount;
        balance = b
     Returns: none
  *****************************************************/
-            public CheckingAccount(String aT, String n, int a, String dof, String e, String p, double b, double tRL, double bL){
+            public CheckingAccount(Title t, String n, int a, String dof, String e, String p, double b, double tRL, double bL){
                 
-                super(aT,n,a,dof,e,p,b);
+                super(t,n,a,dof,e,p,b);
                 
                 checkingID = nextID++;
                 transferLimit = tRL;
@@ -88,7 +88,7 @@ package BankAccount;
             public String toString(){
                 String output = "";
                 
-         output = String.format("Account Type: %16.5s\n",this.getAccountType());
+         output = String.format("Account Type: %16.5s\n",this.getTitle());
          output += String.format("Name: %16.5s\n", this.getName());
          output += String.format("Age: %16.5s\n", this.getAge());
          output += String.format("Date Of Birth: %16.5s\n", this.getdateOfBirth());
@@ -96,11 +96,39 @@ package BankAccount;
          output += String.format("Phone Number: %16.5s\n", this.getPhoneNumber());
          output += String.format("Balance: %16.5f\n", this.getBalance());
          output += String.format("Account ID: %16.5s\n", this.getCheckingId());
-         output += String.format("Transfer Limit; %16.5f\n", this.getTransferLimit());
+         output += String.format("Transfer Limit: %16.5f\n", this.getTransferLimit());
+         output += String.format("Bill Payments: %16.5f\n", this.getBillPayments());
          output += String.format("\n\n");
                 
                 return output;
             }// end toString
  	// ********** mutators **********
  
+        /*****************************************************
+        Purpose: set checking account ID
+        Interface: IN: none
+        Returns: checking account id
+        *****************************************************/
+            public void setCheckingID (int checkingID){
+                this.checkingID = checkingID;
+            }// end setCheckingID
+            
+        /*****************************************************
+        Purpose: set Transfer Limit
+        Interface: IN: none
+        Returns: transfer limit
+        *****************************************************/
+            public void setTransferLimit (double transferLimit){
+                this.transferLimit = transferLimit;
+            }// end setTransferLimit
+            
+        /*****************************************************
+        Purpose: set bill payments
+        Interface: IN: none
+        Returns: bill payments
+        *****************************************************/
+            public void setBillPayments(double billPayments){
+                this.billPayments = billPayments;
+            }// setBillPayment
+            
  }  // end class
