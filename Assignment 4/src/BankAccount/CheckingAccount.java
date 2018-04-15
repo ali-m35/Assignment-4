@@ -1,12 +1,12 @@
 package BankAccount;
 
 /* **********************************************************
- * Programmer:	Rob Sveinson
- * Class:		CS20S
+ * Programmer: Hanzala Ali
+ * Class: CS30S
  * 
- * Assignment:	aX  qY
+ * Assignment: Assingment 4
  *
- * Description:	describe the class you are creating
+ * Description: this class will create a checking account object with its properties
  *
  * 
  * *************************************************************
@@ -14,18 +14,17 @@ package BankAccount;
  
  // import files here as needed
  
- 
  public class CheckingAccount extends BankAccount
  {  // begin class
- 	
+     
  	// *********** class constants **********
             
-            private static int nextID = 0000;
+            private static int nextID = 1000; // id value
             
  	// ********** instance variable **********
-            private int checkingID = 0;
-            private double transferLimit = 0.00;
-            private double billPayments = 0.00; 
+            private int checkingID = 0;             // id for account
+            private double transferLimit = 0.00;    // how much money you can transfer
+            private double billPayments = 0.00;     // your bills
             
  	// ********** constructors ***********
   /*****************************************************
@@ -39,6 +38,9 @@ package BankAccount;
        email = e;
        phoneNumber = p
        balance = b
+       checkingID = nextID++
+       transferLimit = tRL
+       billPayments = bL
     Returns: none
  *****************************************************/
             public CheckingAccount(Title t, String n, int a, String dof, String e, String p, double b, double tRL, double bL){
@@ -51,12 +53,20 @@ package BankAccount;
             
             }// end CheckingAccount
      
+ /*****************************************************
+ Purpose: create person object
+ Interface: IN: none
+ *****************************************************/
+            public CheckingAccount(){
+                // default checkingaccount
+            }// end default CheckingAccount
+            
  	// ********** accessors **********
  	
   /*****************************************************
         Purpose: get the checking account id
         Interface: IN: none
-        Returns: person's name
+        Returns: checking account id
   *****************************************************/
             public int getCheckingId(){
                 return this.checkingID;
@@ -65,7 +75,7 @@ package BankAccount;
    /*****************************************************
         Purpose: get person's transfer limit
         Interface: IN: none
-        Returns: person's name
+        Returns: transfer limit
     *****************************************************/
             public double getTransferLimit(){
                 return this.transferLimit;
@@ -74,7 +84,7 @@ package BankAccount;
      /*****************************************************
         Purpose: get person's bill payments 
         Interface: IN: none
-        Returns: person's name
+        Returns: bill payments
     *****************************************************/
             public double getBillPayments(){
                 return this.billPayments;
@@ -88,16 +98,16 @@ package BankAccount;
             public String toString(){
                 String output = "";
                 
-         output = String.format("Account Type: %16.5s\n",this.getTitle());
-         output += String.format("Name: %16.5s\n", this.getName());
-         output += String.format("Age: %16.5s\n", this.getAge());
-         output += String.format("Date Of Birth: %16.5s\n", this.getdateOfBirth());
-         output += String.format("Email: %16.5s\n", this.getEmail());
-         output += String.format("Phone Number: %16.5s\n", this.getPhoneNumber());
-         output += String.format("Balance: %16.5f\n", this.getBalance());
-         output += String.format("Account ID: %16.5s\n", this.getCheckingId());
-         output += String.format("Transfer Limit: %16.5f\n", this.getTransferLimit());
-         output += String.format("Bill Payments: %16.5f\n", this.getBillPayments());
+         output = String.format("Account Type: %12s\n",this.getTitle());
+         output += String.format("Name: %10s\n", this.getName());
+         output += String.format("Age: %-2s\n", this.getAge());
+         output += String.format("Date Of Birth: %9s\n", this.getdateOfBirth());
+         output += String.format("Email: %12s\n", this.getEmail());
+         output += String.format("Phone Number: %12s\n", this.getPhoneNumber());
+         output += String.format("Balance: $%2s\n", this.df.format(getBalance()));
+         output += String.format("Account ID: %4s\n", this.getCheckingId());
+         output += String.format("Transfer Limit: $%4s\n", this.df.format(getTransferLimit()));
+         output += String.format("Bill Payments: $%4s\n", this.df.format(getBillPayments()));
          output += String.format("\n\n");
                 
                 return output;

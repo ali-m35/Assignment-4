@@ -1,12 +1,12 @@
 package BankAccount;
 
 /* **********************************************************
- * Programmer:	Rob Sveinson
- * Class:		CS20S
+ * Programmer: Hanzala Ali
+ * Class: CS30
  * 
- * Assignment:	aX  qY
+ * Assignment: Assignment 4
  *
- * Description:	describe the class you are creating
+ * Description:	creates a saving account object
  *
  * 
  * *************************************************************
@@ -23,7 +23,7 @@ package BankAccount;
                 private static int nextID = 1000;
      
  	// ********** instance variable **********
-          private int savingID = 0000;      
+          private int savingID = 0000;       // saving account id
           private int transanctionLimit = 0; // how many transactions can be made per month
  	  private double depositRequirements = 0.00; // monthly deposit requirements
      
@@ -63,9 +63,9 @@ package BankAccount;
 
  	// ********** accessors **********
     /*****************************************************
-        Purpose: get person's id
+        Purpose: get savings id
         Interface: IN: none
-        Returns: person's name
+        Returns: savings id
     *****************************************************/
             public int getSavingsID(){
                 return this.savingID;
@@ -74,16 +74,16 @@ package BankAccount;
     /*****************************************************
         Purpose: get person's transaction limit
         Interface: IN: none
-        Returns: person's name
+        Returns: transaction limit
     *****************************************************/
             public int getTransactionLimit(){
                 return this.transanctionLimit;
             }// end getTransactionLimit
     
     /*****************************************************
-        Purpose: get person's transaction limit
+        Purpose: get deposit requirements
         Interface: IN: none
-        Returns: person's name
+        Returns: deposit requirements
     *****************************************************/
             public double getDepositRequirements(){
                 return this.depositRequirements;
@@ -97,16 +97,16 @@ package BankAccount;
             public String toString(){
                 String output = "";
                 
-         output = String.format("Account Type: %16.5s\n",this.getTitle());
-         output += String.format("Name: %16.5s\n", this.getName());
-         output += String.format("Age: %16.5s\n", this.getAge());
-         output += String.format("Date Of Birth: %16.5s\n", this.getdateOfBirth());
-         output += String.format("Email: %16.5s\n", this.getEmail());
-         output += String.format("Phone Number: %16.5s\n", this.getPhoneNumber());
-         output += String.format("Balance: %16.5f\n", this.getBalance());
-         output += String.format("Savings ID: %16.5S\n", this.getSavingsID());
-         output += String.format("Transaction Limit: %16.5s\n", this.getTransactionLimit());
-         output += String.format("Deposit Requirements; %16.5f\n", this.getDepositRequirements());
+         output = String.format("Account Type: %12s\n",this.getTitle());
+         output += String.format("Name: %9s\n", this.getName());
+         output += String.format("Age: %2s\n", this.getAge());
+         output += String.format("Date Of Birth: %9s\n", this.getdateOfBirth());
+         output += String.format("Email: %12s\n", this.getEmail());
+         output += String.format("Phone Number: %12s\n", this.getPhoneNumber());
+         output += String.format("Balance: $%4s\n", this.df.format(getBalance()));
+         output += String.format("Savings ID: %4S\n", this.getSavingsID());
+         output += String.format("Transaction Limit: %-2s\n", this.getTransactionLimit());
+         output += String.format("Deposit Requirements: $%4s\n", this.df.format(getDepositRequirements()));
          output += String.format("\n\n");
                 
                 return output;

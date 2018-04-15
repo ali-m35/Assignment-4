@@ -6,33 +6,37 @@ package BankAccount;
  * 
  * Assignment: Assignement 4
  *
- * Description:	describe the class you are creating
+ * Description:	this class will create a normal bank account 
  *
  * 
  * *************************************************************
  */
  
  // import files here as needed
+ import java.text.DecimalFormat;
  
- 
+
  public class BankAccount
  {  // begin class
  	
+        //****** create object *****
+        DecimalFormat df = new DecimalFormat("0.00");
+        
              public enum Title{
-                 Savings,BankAccount,Checking
+                 SavingsAccount,BankAccount,CheckingAccount
              }// end enum title
      
  	// *********** class constants *********
  	
  	// ********** instance variable **********
             
-            private Title title = null; 
-            private String name = "";
-            private int age = 0;
-            private String dateOfBirth = "";
-            private String email = "";
-            private String phoneNumber = "";
-            private double balance = 0.00;
+            private Title title = null;         // account type 
+            private String name = "";           // the name of th bank account holder
+            private int age = 0;                // the persons age
+            private String dateOfBirth = "";    // their date of birth
+            private String email = "";          // their email
+            private String phoneNumber = "";    // their phone number
+            private double balance = 0.0;       // the account balance
             
  	// ********** constructors ***********
  /*****************************************************
@@ -80,7 +84,7 @@ package BankAccount;
 /*****************************************************
     Purpose: get person's age
     Interface: IN: none
-    Returns: person's name
+    Returns: person's age
  *****************************************************/
          public int getAge(){
              return this.age;
@@ -89,7 +93,7 @@ package BankAccount;
 /*****************************************************
  Purpose: get person's date of birth
  Interface: IN: none
- Returns: person's name
+ Returns: person's date of birth
  *****************************************************/
          public String getdateOfBirth (){
              return this.dateOfBirth;
@@ -98,7 +102,7 @@ package BankAccount;
 /*****************************************************
  Purpose: get person's email
  Interface: IN: none
- Returns: person's name
+ Returns: person's email
  *****************************************************/
          public String getEmail(){
              return this.email;
@@ -107,7 +111,7 @@ package BankAccount;
 /*****************************************************
  Purpose: get phone number
  Interface: IN: none
- Returns: person's name
+ Returns: person's phone number
  *****************************************************/
          public String getPhoneNumber(){
              return this.phoneNumber;
@@ -116,16 +120,16 @@ package BankAccount;
 /*****************************************************
  Purpose: get person's balance 
  Interface: IN: none
- Returns: person's name
+ Returns: person's balance
  *****************************************************/
          public double getBalance(){
              return this.balance;
          }// end getBalance
          
 /*****************************************************
- Purpose: get person's balance 
+ Purpose: get account type
  Interface: IN: none
- Returns: person's name
+ Returns: account type
  *****************************************************/
          public Title getTitle(){
              return this.title;
@@ -141,13 +145,13 @@ package BankAccount;
          public String toString(){
              String output = "";
          
-         output = String.format("Account Type: %16.5s\n", this.getTitle());
-         output += String.format("Name: %16.5s\n", this.getName());
-         output += String.format("Age: %16.5s\n", this.getAge());
-         output += String.format("Date Of Birth: %16.5s\n", this.getdateOfBirth());
-         output += String.format("Email: %16.5s\n", this.getEmail());
-         output += String.format("Phone Number: %16.5s\n", this.getPhoneNumber());
-         output += String.format("Balance: %16.5f\n", this.getBalance());
+         output = String.format("Account Type: %12s\n", this.getTitle());
+         output += String.format("Name: %10s\n", this.getName());
+         output += String.format("Age: %-2s\n", this.getAge());
+         output += String.format("Date Of Birth: %9s\n", this.getdateOfBirth());
+         output += String.format("Email: %12s\n", this.getEmail());
+         output += String.format("Phone Number: %12s\n", this.getPhoneNumber());
+         output += String.format("Balance: $%4s\n", this.df.format(getBalance()));
          output += String.format("\n\n");
          
          return output;
